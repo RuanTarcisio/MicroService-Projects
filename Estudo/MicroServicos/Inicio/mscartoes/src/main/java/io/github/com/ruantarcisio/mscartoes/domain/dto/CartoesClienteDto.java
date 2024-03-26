@@ -12,14 +12,14 @@ public class CartoesClienteDto {
 	
 	private String nome;
 	private String bandeira;
-	private BigDecimal limite;
+	private BigDecimal limiteLiberado;
 	
 	public static CartoesClienteDto fromModel (ClienteCartao model) {
 		return CartoesClienteDto
 				.builder()
 				.nome(model.getNome())
 				.bandeira(model.getCartao().getBandeira().toString())
-				.limite(model.getLimite())
+				.limiteLiberado(model.getLimite())
 				.build();
 	}
 

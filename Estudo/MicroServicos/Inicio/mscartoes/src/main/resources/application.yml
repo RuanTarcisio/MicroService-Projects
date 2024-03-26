@@ -2,7 +2,7 @@ spring:
   application:
     name: mscartoes
   datasource:
-      url: jdbc:postgresql://localhost:5432/msclientes
+      url: jdbc:postgresql://localhost:5432/mscartoes
       username: postgres
       password: senh@BD
   jpa: 

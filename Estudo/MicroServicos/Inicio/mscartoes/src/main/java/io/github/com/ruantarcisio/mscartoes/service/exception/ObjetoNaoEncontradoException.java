@@ -1,4 +1,4 @@
-package io.github.com.ruantarcisio.mscartoes.service;
+package io.github.com.ruantarcisio.mscartoes.service.exception;
 
 public class ObjetoNaoEncontradoException extends RuntimeException{
 	

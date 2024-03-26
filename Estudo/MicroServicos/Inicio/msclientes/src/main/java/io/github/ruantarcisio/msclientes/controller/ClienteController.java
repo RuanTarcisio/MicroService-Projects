@@ -36,7 +36,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ClienteDto> getCliente(@RequestBody ClienteDto clienteDto) {
+	public ResponseEntity<ClienteDto> cadastraCliente(@RequestBody ClienteDto clienteDto) {
 
 		var cliente = clienteMapper.modelToCliente(clienteDto);
 
@@ -49,7 +49,7 @@ public class ClienteController {
 	}
 
 	@GetMapping
-	public ResponseEntity<ClienteDto> buscaCliente(@RequestParam("cpf") String cpf) {
+	public ResponseEntity buscaCliente(@RequestParam("cpf") String cpf) {
 
 		var cliente = clienteService.findByCpf(cpf);
 

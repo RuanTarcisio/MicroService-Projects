@@ -14,9 +14,10 @@ import lombok.RequiredArgsConstructor;
 public final class ClienteCartaoService {
 
 	@Autowired
-	private ClienteCartaoRepository repository;
+	private final ClienteCartaoRepository repository;
 
 	public List<ClienteCartao> listCartoesByCpf(String cpf) {
-		return repository.findByCpf(cpf);
+		List<ClienteCartao> listCartoes = repository.findByCpf(cpf);
+		return listCartoes;
 	}
 }

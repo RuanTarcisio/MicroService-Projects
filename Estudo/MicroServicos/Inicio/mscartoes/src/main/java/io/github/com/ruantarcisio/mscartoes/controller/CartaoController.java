@@ -54,10 +54,9 @@ public class CartaoController {
 	   var cartao = cartaoMapper.dtoToCartao(cartaoDto);
 	   cartao = cartaoService.save(cartao);
 	   
-	   URI headerLocation = ServletUriComponentsBuilder.fromCurrentContextPath().query("cartao={id}")
-	       .buildAndExpand(cartao.getId()).toUri();
-	
-	   return ResponseEntity.created(headerLocation).build();
+	   URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cartao.getId())
+				.toUri();
+		return ResponseEntity.created(uri).build();
 	   
 	 }
 	 
@@ -78,7 +77,7 @@ public class CartaoController {
 	 }
 	 
 	 @GetMapping(params = "cpf")
-	 public ResponseEntity<List<CartoesClienteDto>> getCartoesByCliente(@RequestParam ("renda") String cpf){
+	 public ResponseEntity<List<CartoesClienteDto>> getCartoesByCliente(@RequestParam ("cpf") String cpf){
 	
 	   var cartoes = clienteCartaoService.listCartoesByCpf(cpf);
 	   List<CartoesClienteDto> listDto = cartoes.stream()
